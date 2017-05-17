@@ -1,6 +1,5 @@
 ﻿body {
-    padding-top: 75px;
-    padding-bottom: 20px;
+
 }
 
 /* Wrapping element */
@@ -49,12 +48,12 @@ textarea {
     }
 }
 
-.navbar-inverse {
+/*.navbar-inverse {
     background-color: darkslategray;
     color: white;
     padding: .75em 0 .75em 0;
     font-size: 22px;
-}
+}*/
 
 .paragraphwrap {
     /*width: ;*/
