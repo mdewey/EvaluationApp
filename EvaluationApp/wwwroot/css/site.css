@@ -47,26 +47,3 @@ textarea {
         display: none;
     }
 }
-
-/*.navbar-inverse {
-    background-color: darkslategray;
-    color: white;
-    padding: .75em 0 .75em 0;
-    font-size: 22px;
-}*/
-
-.paragraphwrap {
-    /*width: ;*/
-    height: 250px;
-    -webkit-column-count: 1;
-    -moz-column-count: 1;
-    column-count: 1;
-    -webkit-column-gap: 10px;
-    -moz-column-gap: 10px;
-    column-gap: 10px;
-}
-
-.coursebox {
-    outline: solid thin;
-    outline-color: black;
-}
