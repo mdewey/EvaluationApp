@@ -21,6 +21,15 @@ namespace EvaluationApp.Data
             // Customize the ASP.NET Identity model and override the defaults if needed.
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
+
+
         }
+
+        public DbSet<Students> Students { get; set; }
+        public DbSet<Lecturers> Lecturers { get; set; }
+        public DbSet<Courses> Courses { get; set; }
+        public DbSet<Lectures> Lectures { get; set; }
+        public DbSet<Questions> Questions { get; set; }
+        public DbSet<DataOfUnderstanding> DataOfUnderstanding { get; set; }
     }
 }
