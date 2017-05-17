@@ -1,0 +1,26 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1>Lecturer Portal</h1>
+
+<div class="col-md-3">
+    <h2>Tools</h2>
+    <ul>
+        <li>Add Class</li>
+        <li>Delete Class</li>
+        <li>Show All Classes</li>
+    </ul>
+</div>
+
+<div class="col-md-6">
+    <div class="coursebox">
+        <h3>Course</h3>
+        @*@foreach (var item in courses)
+        {
+            item.Name;
+        }*@
+    </div>
+</div>
