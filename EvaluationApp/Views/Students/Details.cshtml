@@ -1,4 +1,4 @@
-@model EvaluationApp.Models.Lecturers
+@model EvaluationApp.Models.Students
 
 @{
     ViewData["Title"] = "Details";
@@ -7,7 +7,7 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Lecturers</h4>
+    <h4>Students</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -17,16 +17,22 @@
             @Html.DisplayFor(model => model.Name)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.School)
+            @Html.DisplayNameFor(model => model.TempKey)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.School)
+            @Html.DisplayFor(model => model.TempKey)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.CourseID)
+            @Html.DisplayNameFor(model => model.DataID)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.CourseID)
+            @Html.DisplayFor(model => model.DataID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LectureID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LectureID)
         </dd>
     </dl>
 </div>

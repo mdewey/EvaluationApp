@@ -10,7 +10,6 @@ namespace EvaluationApp.Models
         public int Id { get; set; }
         public DateTime TimeAsked { get; set; }
         public string QuestionText { get; set; }
-        public int StudentID { get; set; }
 
     }
 }

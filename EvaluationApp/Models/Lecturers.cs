@@ -10,6 +10,12 @@ namespace EvaluationApp.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string School { get; set; }
-        public int ClassID { get; set; }
+
+        public int CourseID { get; set; }
+        public Courses Courses { get; set; }
+
+        //public int UserId { get; set; }
+        //public virtual User User { get; set; }
+
     }
 }
