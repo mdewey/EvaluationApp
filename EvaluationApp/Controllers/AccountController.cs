@@ -70,7 +70,7 @@ namespace EvaluationApp.Controllers
                 if (result.Succeeded)
                 {
                     _logger.LogInformation(1, "User logged in.");
-                    return RedirectToAction("Index","Lecturers");
+                    return RedirectToAction("Portal","Lecturers");
                 }
                 if (result.RequiresTwoFactor)
                 {
