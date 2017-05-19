@@ -12,10 +12,10 @@ namespace EvaluationApp.Models
         public string Name { get; set; }
         public Guid TempKey { get; set; }
 
-        public int DataID { get; set; }
+        public int DataId { get; set; }
         public DataOfUnderstanding DataofUnderstanding { get; set; }
 
-        public int QuestionID { get; set; }
+        public int QuestionId { get; set; }
         public Questions Questions { get; set; }
     }
 }

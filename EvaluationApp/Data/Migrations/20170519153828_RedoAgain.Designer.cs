@@ -8,9 +8,10 @@ using EvaluationApp.Data;
 namespace EvaluationApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170519153828_RedoAgain")]
+    partial class RedoAgain
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")
@@ -105,16 +106,11 @@ namespace EvaluationApp.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("ApplicationUserId");
-
                     b.Property<string>("Name");
 
                     b.Property<string>("School");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ApplicationUserId")
-                        .IsUnique();
 
                     b.ToTable("Lecturers");
                 });
@@ -290,13 +286,6 @@ namespace EvaluationApp.Data.Migrations
                         .WithMany("Courses")
                         .HasForeignKey("LecturersId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("EvaluationApp.Models.Lecturers", b =>
-                {
-                    b.HasOne("EvaluationApp.Models.ApplicationUser", "ApplicationUser")
-                        .WithOne("Lecturers")
-                        .HasForeignKey("EvaluationApp.Models.Lecturers", "ApplicationUserId");
                 });
 
             modelBuilder.Entity("EvaluationApp.Models.Lectures", b =>

@@ -8,9 +8,10 @@ using EvaluationApp.Data;
 namespace EvaluationApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170519152543_ConnectionsRedo")]
+    partial class ConnectionsRedo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")
@@ -73,7 +74,7 @@ namespace EvaluationApp.Data.Migrations
 
                     b.Property<string>("CourseCode");
 
-                    b.Property<int>("LecturersId");
+                    b.Property<int?>("LecturersId");
 
                     b.Property<string>("Name");
 
@@ -89,7 +90,7 @@ namespace EvaluationApp.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("StudentId");
+                    b.Property<int>("StudentID");
 
                     b.Property<DateTime>("Time");
 
@@ -105,16 +106,11 @@ namespace EvaluationApp.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("ApplicationUserId");
-
                     b.Property<string>("Name");
 
                     b.Property<string>("School");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ApplicationUserId")
-                        .IsUnique();
 
                     b.ToTable("Lecturers");
                 });
@@ -124,15 +120,21 @@ namespace EvaluationApp.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("CoursesId");
+                    b.Property<int?>("CoursesId");
 
                     b.Property<DateTime>("LectureDate");
+
+                    b.Property<int>("StudentID");
+
+                    b.Property<int?>("StudentsId");
 
                     b.Property<string>("Subject");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CoursesId");
+
+                    b.HasIndex("StudentsId");
 
                     b.ToTable("Lectures");
                 });
@@ -156,13 +158,13 @@ namespace EvaluationApp.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("DataId");
+                    b.Property<int>("DataID");
 
                     b.Property<int?>("DataofUnderstandingId");
 
                     b.Property<string>("Name");
 
-                    b.Property<int>("QuestionId");
+                    b.Property<int>("QuestionID");
 
                     b.Property<int?>("QuestionsId");
 
@@ -286,25 +288,20 @@ namespace EvaluationApp.Data.Migrations
 
             modelBuilder.Entity("EvaluationApp.Models.Courses", b =>
                 {
-                    b.HasOne("EvaluationApp.Models.Lecturers", "Lecturers")
+                    b.HasOne("EvaluationApp.Models.Lecturers")
                         .WithMany("Courses")
-                        .HasForeignKey("LecturersId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("EvaluationApp.Models.Lecturers", b =>
-                {
-                    b.HasOne("EvaluationApp.Models.ApplicationUser", "ApplicationUser")
-                        .WithOne("Lecturers")
-                        .HasForeignKey("EvaluationApp.Models.Lecturers", "ApplicationUserId");
+                        .HasForeignKey("LecturersId");
                 });
 
             modelBuilder.Entity("EvaluationApp.Models.Lectures", b =>
                 {
-                    b.HasOne("EvaluationApp.Models.Courses", "Courses")
+                    b.HasOne("EvaluationApp.Models.Courses")
                         .WithMany("Lectures")
-                        .HasForeignKey("CoursesId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("CoursesId");
+
+                    b.HasOne("EvaluationApp.Models.Students", "Students")
+                        .WithMany()
+                        .HasForeignKey("StudentsId");
                 });
 
             modelBuilder.Entity("EvaluationApp.Models.Students", b =>

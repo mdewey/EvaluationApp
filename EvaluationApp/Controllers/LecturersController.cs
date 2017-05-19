@@ -7,29 +7,38 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EvaluationApp.Data;
 using EvaluationApp.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace EvaluationApp.Controllers
 {
     public class LecturersController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public LecturersController(ApplicationDbContext context)
+        public LecturersController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
-        public IActionResult Portal()
+        public async Task<IActionResult> Portal()
+        {
+            var _userId = _userManager.GetUserId(HttpContext.User);
+            var rv = await _context.Lecturers.Include(i => i.Courses).Where(w => w.ApplicationUserId == _userId).Select(s => s.Courses).ToListAsync();
+            return View(rv);
+        }
+
+        public IActionResult Display()
         {
             return View();
         }
 
-        //TODO: FIXXXXXXXXXXXXXX
         //// GET: Lecturers
         public async Task<IActionResult> Index()
         {
-                return View(await _context.Lecturers.ToListAsync());
-        //    return View(await _context.Lecturers.Where(w => w.Id == User.Identity).ToListAsync());
+               return View(await _context.Lecturers.ToListAsync());
+            
         }
 
         // GET: Lecturers/Details/5

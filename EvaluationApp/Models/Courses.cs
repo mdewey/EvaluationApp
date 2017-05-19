@@ -11,7 +11,9 @@ namespace EvaluationApp.Models
         public string Name { get; set; }
         public string CourseCode { get; set; }
 
-        public int LectureID { get; set; }
-        public Lectures Lectures { get; set; }
+        public ICollection<Lectures> Lectures { get; set; }
+
+        public int LecturersId { get; set; }
+        public Lecturers Lecturers { get; set; }
     }
 }

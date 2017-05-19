@@ -3,7 +3,6 @@ c:\users\allie\documents\visual studio 2017\Projects\EvaluationApp\EvaluationApp
 c:\users\allie\documents\visual studio 2017\Projects\EvaluationApp\EvaluationApp\bin\Debug\netcoreapp1.1\EvaluationApp.runtimeconfig.dev.json
 c:\users\allie\documents\visual studio 2017\Projects\EvaluationApp\EvaluationApp\bin\Debug\netcoreapp1.1\EvaluationApp.dll
 c:\users\allie\documents\visual studio 2017\Projects\EvaluationApp\EvaluationApp\bin\Debug\netcoreapp1.1\EvaluationApp.pdb
-c:\users\allie\documents\visual studio 2017\Projects\EvaluationApp\EvaluationApp\obj\Debug\netcoreapp1.1\EvaluationApp.csprojResolveAssemblyReference.cache
 c:\users\allie\documents\visual studio 2017\Projects\EvaluationApp\EvaluationApp\obj\Debug\netcoreapp1.1\UserSecretsAssemblyInfo.cs
 c:\users\allie\documents\visual studio 2017\Projects\EvaluationApp\EvaluationApp\obj\Debug\netcoreapp1.1\EvaluationApp.AssemblyInfo.cs
 c:\users\allie\documents\visual studio 2017\Projects\EvaluationApp\EvaluationApp\obj\Debug\netcoreapp1.1\EvaluationApp.dll

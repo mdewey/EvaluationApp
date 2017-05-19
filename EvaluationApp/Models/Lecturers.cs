@@ -11,11 +11,9 @@ namespace EvaluationApp.Models
         public string Name { get; set; }
         public string School { get; set; }
 
-        public int CourseID { get; set; }
-        public Courses Courses { get; set; }
+        public ICollection<Courses> Courses { get; set; }
 
-        //public int UserId { get; set; }
-        //public virtual User User { get; set; }
-
+        public string ApplicationUserId { get; set; }
+        public ApplicationUser ApplicationUser { get; set; }
     }
 }
