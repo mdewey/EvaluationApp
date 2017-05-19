@@ -16,42 +16,32 @@ textarea {
     max-width: 280px;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+/*----------------
+------------------
+LECTURER    PORTAL
+------------------
+----------------*/
+
+#portaltitle {
+    padding-bottom: 1em;
+    padding-left: 2em;
 }
 
-/* buttons and links extension to use brackets: [ click me ] */
-.btn-bracketed::before {
-    display: inline-block;
-    content: "[";
-    padding-right: 0.5em;
+.portalclasses {
+    padding-left: 5em;
 }
 
-.btn-bracketed::after {
-    display: inline-block;
-    content: "]";
-    padding-left: 0.5em;
-}
-
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
-}
-
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
-    }
+.newplaceholder {
+    text-align: center;
+    border: solid thin;
+    border-color: lightgray;
+    margin: 1em 1em 1em 1em;
 }
 
 /* The side navigation menu */
 .sidenav {
     height: 100%; /* 100% Full-height */
-    width: 15%; /* 0 width - change this with JavaScript */
+    width: 20%; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0;
@@ -72,10 +62,10 @@ textarea {
         transition: 0.3s
     }
 
-        /* When you mouse over the navigation links, change their color */
-        .sidenav a:hover, .offcanvas a:focus {
-            color: #f1f1f1;
-        }
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus {
+       color: #f1f1f1;
+}
 
     /* Position and style the close button (top right corner) */
     /*.sidenav .closebtn {
@@ -88,8 +78,8 @@ textarea {
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
-    transition: margin-left .5s;
-    padding: 20px;
+    position: relative;
+    margin-left: 20%;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -98,7 +88,86 @@ textarea {
         padding-top: 15px;
     }
 
-        .sidenav a {
-            font-size: 18px;
-        }
+    .sidenav a {
+        font-size: 18px;
+    }
 }
+
+/*----------------
+------------------
+STUDENT     PORTAL
+------------------
+----------------*/
+
+.studentportal {
+    text-align: center;
+    padding-top: 2em;
+    border: ridge 5px;
+    width: 30em;
+    margin: 0 auto;
+    background: -webkit-linear-gradient(left, #0f182b 0%,#2a3b53 33%,#2a3b53 66%,#0f182b 100%);
+    color: silver;
+    min-height: 40em;
+}
+
+/*----------------
+------------------
+STUDENT  EVALUATOR
+------------------
+----------------*/
+
+.evaluator {
+    text-align: center;
+    padding-top: 2em;
+    border: ridge 5px;
+    width: 30em;
+    margin: 0 auto;
+    background: -webkit-linear-gradient(left, #0f182b 0%,#2a3b53 33%,#2a3b53 66%,#0f182b 100%);
+    color: silver;
+}
+
+.votebutton {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 100px solid black;
+    background: -webkit-linear-gradient(top, #2c354e 0%,#576a97 100%);
+    z-index: 2;
+    margin: 0 auto;
+}
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-top: 100px solid black;
+    background: -webkit-linear-gradient(top, #2c354e 0%,#576a97 100%);
+    z-index: 2;
+    margin: 0 auto;
+}
+
+/*.arrowtwo-border {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 16px solid #7F7F7F;
+}
+
+.arrowtwo {
+    width: 0;
+    height: 0;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+    border-right: 9px solid #A6A6A6;
+    position: relative;
+    bottom: 9px;
+    left: 4px;
+}*/

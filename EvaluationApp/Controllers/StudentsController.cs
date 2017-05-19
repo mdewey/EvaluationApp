@@ -19,6 +19,18 @@ namespace EvaluationApp.Controllers
             _context = context;    
         }
 
+        // Student Portal: Requests student name
+        public IActionResult Portal()
+        {
+            return View();
+        }
+
+        // Student Evaluator Tool
+        public IActionResult Evaluator()
+        {
+            return View();
+        }
+
         // GET: Students
         public async Task<IActionResult> Index()
         {

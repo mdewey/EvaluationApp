@@ -37,6 +37,7 @@
     <Content Include="wwwroot\images\about\2.jpg" />
     <Content Include="wwwroot\images\about\3.jpg" />
     <Content Include="wwwroot\images\about\4.jpg" />
+    <Content Include="wwwroot\images\blackbluelecture.jpg" />
     <Content Include="wwwroot\images\closelecture.jpg" />
     <Content Include="wwwroot\images\computer.png" />
     <Content Include="wwwroot\images\chart.png" />
@@ -45,7 +46,10 @@
     <Content Include="wwwroot\images\logos\designmodo.jpg" />
     <Content Include="wwwroot\images\logos\envato.jpg" />
     <Content Include="wwwroot\images\logos\themeforest.jpg" />
+    <Content Include="wwwroot\images\logos\whitegraph.png" />
     <Content Include="wwwroot\images\map-image.png" />
+    <Content Include="wwwroot\images\scholars.jpg" />
+    <Content Include="wwwroot\images\whitegraph.png" />
     <Content Include="wwwroot\img\about\1.jpg" />
     <Content Include="wwwroot\img\about\2.jpg" />
     <Content Include="wwwroot\img\about\3.jpg" />
