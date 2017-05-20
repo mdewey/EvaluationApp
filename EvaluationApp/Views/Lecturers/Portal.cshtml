@@ -1,7 +1,9 @@
+@*@model IEnumerable<EvaluationApp.Models.Courses>*@
 
-@*@{
+
+@{
     ViewData["Title"] = "Portal";
-}*@
+}
 
 <div id="mySidenav" class="sidenav">
     @*<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>*@
@@ -9,7 +11,7 @@
     <a href="/Home/Index">Home</a>
     <a href="#">View All Classes</a>
     <a href="/Students/Details">View List of Students</a>
-    <a href="#">Edit Classes</a>
+    <a href="@Url.Action("Index", "Courses")">Edit Classes</a>
     <a href="#">Create New Lecture</a>
     <a href="#">Generate Lecture Link</a>
     <a href="#">Go To Lecture Display</a>
@@ -25,29 +27,25 @@
 
     <div class="portalclasses">
         <div class="row">
+            @*@foreach (var item in Model)
+            {
+                <div class="col-sm-2 newplaceholder">
+                    <a href="/Index/Courses/@item.Id">
+                        <img src="/images/blackbluelecture.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                        <h4>@item.Name</h4>
+                        <span>Click for Access</span>
+                    </a>
+                </div>
+            }*@
             <div class="col-sm-2 newplaceholder" href="#">
-                <a href="@Url.Action("Index", "Users")">
+                <a href="@Url.Action("Details", "Courses", "1")">
                     <img src="/images/blackbluelecture.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
                     <h4>Class Name</h4>
                     <span>Click for Access</span>
                 </a>
             </div>
             <div class="col-sm-2 newplaceholder">
-                <a href="http://google.com">
-                    <img src="/images/blackbluelecture.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-                    <h4>Class Name</h4>
-                    <span>Click for Access</span>
-                </a>
-            </div>
-            <div class="col-sm-2 newplaceholder">
-                <a href="http://google.com">
-                    <img src="/images/blackbluelecture.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-                    <h4>Class Name</h4>
-                    <span>Click for Access</span>
-                </a>
-            </div>
-            <div class="col-sm-2 newplaceholder">
-                <a href="http://google.com">
+                <a href="@Url.Action("Index", "Courses")">
                     <img src="/images/blackbluelecture.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
                     <h4>Class Name</h4>
                     <span>Click for Access</span>
@@ -56,4 +54,5 @@
         </div>
     </div>
 </div>
+
 
