@@ -11,5 +11,7 @@ namespace EvaluationApp.Models
         public DateTime TimeAsked { get; set; }
         public string QuestionText { get; set; }
 
+        public int StudentsId { get; set; }
+        public Students Students { get; set; }
     }
 }

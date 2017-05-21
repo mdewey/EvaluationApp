@@ -13,13 +13,12 @@ namespace EvaluationApp.Data.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .HasAnnotation("ProductVersion", "1.1.2")
+                .HasAnnotation("ProductVersion", "1.0.0-rc3")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("EvaluationApp.Models.ApplicationUser", b =>
                 {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<string>("Id");
 
                     b.Property<int>("AccessFailedCount");
 
@@ -66,121 +65,9 @@ namespace EvaluationApp.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("EvaluationApp.Models.Courses", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("CourseCode");
-
-                    b.Property<int>("LecturersId");
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("LecturersId");
-
-                    b.ToTable("Courses");
-                });
-
-            modelBuilder.Entity("EvaluationApp.Models.DataOfUnderstanding", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("StudentId");
-
-                    b.Property<DateTime>("Time");
-
-                    b.Property<bool>("UnderstandingYorN");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("DataOfUnderstanding");
-                });
-
-            modelBuilder.Entity("EvaluationApp.Models.Lecturers", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("ApplicationUserId");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("School");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ApplicationUserId")
-                        .IsUnique();
-
-                    b.ToTable("Lecturers");
-                });
-
-            modelBuilder.Entity("EvaluationApp.Models.Lectures", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("CoursesId");
-
-                    b.Property<DateTime>("LectureDate");
-
-                    b.Property<string>("Subject");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CoursesId");
-
-                    b.ToTable("Lectures");
-                });
-
-            modelBuilder.Entity("EvaluationApp.Models.Questions", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("QuestionText");
-
-                    b.Property<DateTime>("TimeAsked");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Questions");
-                });
-
-            modelBuilder.Entity("EvaluationApp.Models.Students", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("DataId");
-
-                    b.Property<int?>("DataofUnderstandingId");
-
-                    b.Property<string>("Name");
-
-                    b.Property<int>("QuestionId");
-
-                    b.Property<int?>("QuestionsId");
-
-                    b.Property<Guid>("TempKey");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DataofUnderstandingId");
-
-                    b.HasIndex("QuestionsId");
-
-                    b.ToTable("Students");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRole", b =>
                 {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<string>("Id");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
@@ -194,7 +81,6 @@ namespace EvaluationApp.Data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedName")
-                        .IsUnique()
                         .HasName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles");
@@ -266,6 +152,8 @@ namespace EvaluationApp.Data.Migrations
 
                     b.HasIndex("RoleId");
 
+                    b.HasIndex("UserId");
+
                     b.ToTable("AspNetUserRoles");
                 });
 
@@ -282,40 +170,6 @@ namespace EvaluationApp.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("EvaluationApp.Models.Courses", b =>
-                {
-                    b.HasOne("EvaluationApp.Models.Lecturers", "Lecturers")
-                        .WithMany("Courses")
-                        .HasForeignKey("LecturersId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("EvaluationApp.Models.Lecturers", b =>
-                {
-                    b.HasOne("EvaluationApp.Models.ApplicationUser", "ApplicationUser")
-                        .WithOne("Lecturers")
-                        .HasForeignKey("EvaluationApp.Models.Lecturers", "ApplicationUserId");
-                });
-
-            modelBuilder.Entity("EvaluationApp.Models.Lectures", b =>
-                {
-                    b.HasOne("EvaluationApp.Models.Courses", "Courses")
-                        .WithMany("Lectures")
-                        .HasForeignKey("CoursesId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("EvaluationApp.Models.Students", b =>
-                {
-                    b.HasOne("EvaluationApp.Models.DataOfUnderstanding", "DataofUnderstanding")
-                        .WithMany()
-                        .HasForeignKey("DataofUnderstandingId");
-
-                    b.HasOne("EvaluationApp.Models.Questions", "Questions")
-                        .WithMany()
-                        .HasForeignKey("QuestionsId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>

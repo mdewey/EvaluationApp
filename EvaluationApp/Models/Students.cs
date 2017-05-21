@@ -10,12 +10,14 @@ namespace EvaluationApp.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public Guid TempKey { get; set; }
+        public Guid TempKey { get; set; } = Guid.NewGuid();
 
-        public int DataId { get; set; }
-        public DataOfUnderstanding DataofUnderstanding { get; set; }
+        public ICollection<DataOfUnderstanding> DataOfUnderstanding { get; set; }
 
-        public int QuestionId { get; set; }
-        public Questions Questions { get; set; }
+        public ICollection<Questions> Questions { get; set; }
+
+        public int LecturesId { get; set; }
+        public Lectures Lectures { get; set; }
+
     }
 }

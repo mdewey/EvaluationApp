@@ -11,8 +11,10 @@ namespace EvaluationApp.Models
         public string Subject { get; set; }
         public DateTime LectureDate { get; set; }
 
+        public ICollection<Students> Students { get; set; }
+
         public int CoursesId { get; set; }
         public Courses Courses { get; set; }
-
+       
     }
 }
