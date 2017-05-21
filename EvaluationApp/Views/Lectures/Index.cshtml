@@ -49,7 +49,9 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Subject)
+                        <a href="/Lectures/Details/@item.Id">
+                            @Html.DisplayFor(modelItem => item.Subject)
+                        </a>
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.LectureDate)

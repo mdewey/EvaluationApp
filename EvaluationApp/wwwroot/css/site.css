@@ -1,6 +1,12 @@
-﻿/*body {
+﻿body {
+    padding-left: 2em;
+    padding-right: 2em;
+}
 
-}*/
+body .Home {
+    padding-left: 0;
+    padding-right: 0;
+}
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
@@ -24,7 +30,6 @@ LECTURER    PORTAL
 
 #portaltitle {
     padding-bottom: 1em;
-    padding-left: 2em;
 }
 
 .portalclasses {
@@ -53,7 +58,7 @@ LECTURER    PORTAL
 }
 
     /* The navigation menu links */
-    .sidenav a {
+    .sidenav a, dl, dt {
         padding: 8px 8px 8px 32px;
         text-decoration: none;
         font-size: 25px;
@@ -79,7 +84,7 @@ LECTURER    PORTAL
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
     position: relative;
-    margin-left: 20%;
+    margin-left: 23%;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */

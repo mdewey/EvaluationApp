@@ -72,7 +72,7 @@ namespace EvaluationApp.Controllers
             {
                 _context.Add(students);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction("Evaluator");
             }
             return View(students);
         }

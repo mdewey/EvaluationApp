@@ -79,6 +79,7 @@
     <Content Include="wwwroot\js\agency.js" />
     <Content Include="wwwroot\js\agency.min.js" />
     <Content Include="wwwroot\js\jqBootstrapValidation.js" />
+    <Content Include="wwwroot\js\studentSignUp.js" />
     <Content Include="wwwroot\lib\agencybootstrap\.gitignore" />
     <Content Include="wwwroot\lib\agencybootstrap\css\agency.css" />
     <Content Include="wwwroot\lib\agencybootstrap\css\agency.min.css" />

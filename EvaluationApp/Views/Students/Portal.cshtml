@@ -1,3 +1,4 @@
+@model EvaluationApp.Models.Students
 
 @{
     ViewData["Title"] = "Portal";
@@ -8,10 +9,28 @@
 
     <p>Please enter your name:</p>
 
-    <form>
-        Name:<br>
-        <input type="text" name="studentname"><br>
-        <input type="submit" value="Submit">
+    <form asp-action="Create">
+        <div class="form-horizontal">
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                @*<label asp-for="Name" class="col-md-2 control-label"></label>*@
+                <div class="col-md-10">
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input type="submit" value="Enter" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
     </form>
 
+
 </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
