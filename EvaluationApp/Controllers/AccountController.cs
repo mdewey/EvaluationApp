@@ -12,12 +12,14 @@ using Microsoft.Extensions.Options;
 using EvaluationApp.Models;
 using EvaluationApp.Models.AccountViewModels;
 using EvaluationApp.Services;
+using EvaluationApp.Data;
 
 namespace EvaluationApp.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
+        private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailSender _emailSender;
@@ -26,6 +28,7 @@ namespace EvaluationApp.Controllers
         private readonly string _externalCookieScheme;
 
         public AccountController(
+            ApplicationDbContext context,
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IOptions<IdentityCookieOptions> identityCookieOptions,
@@ -33,6 +36,7 @@ namespace EvaluationApp.Controllers
             ISmsSender smsSender,
             ILoggerFactory loggerFactory)
         {
+            _context = context;
             _userManager = userManager;
             _signInManager = signInManager;
             _externalCookieScheme = identityCookieOptions.Value.ExternalCookieAuthenticationScheme;
@@ -124,6 +128,13 @@ namespace EvaluationApp.Controllers
                     //    $"Please confirm your account by clicking this link: <a href='{callbackUrl}'>link</a>");
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     _logger.LogInformation(3, "User created a new account with password.");
+                    var lecturer = new Lecturers
+                    {
+                        ApplicationUserId = user.Id,
+                        Name = user.Email
+                    };
+                   _context.Lecturers.Add(lecturer);
+                   _context.SaveChanges();
                     return RedirectToLocal(returnUrl);
                 }
                 AddErrors(result);

@@ -26,6 +26,7 @@ namespace EvaluationApp.Controllers
 
         public async Task<IActionResult> Portal()
         {
+            // get the current user's lecture id and attach to view
             var _userId = _userManager.GetUserId(HttpContext.User);
             var rv = await _context.Lecturers.Include(i => i.Courses).Where(w => w.ApplicationUserId == _userId).Select(s => s.Courses).ToListAsync();
             return View(rv);

@@ -7,16 +7,21 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EvaluationApp.Data;
 using EvaluationApp.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace EvaluationApp.Controllers
 {
+    [Authorize]
     public class CoursesController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public CoursesController(ApplicationDbContext context)
+        public CoursesController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
-            _context = context;    
+            _context = context;
+            _userManager = userManager;
         }
 
         // GET: Courses
@@ -61,11 +66,16 @@ namespace EvaluationApp.Controllers
         {
             if (ModelState.IsValid)
             {
+                // get the current user's lecture id here, add automatically to course created
+                var _userId = _userManager.GetUserId(HttpContext.User);
+                var lecturersId = _context.Lecturers.FirstOrDefault(f => f.ApplicationUserId == _userId).Id;
+                courses.LecturersId = lecturersId;
                 _context.Add(courses);
+
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            ViewData["LecturersId"] = new SelectList(_context.Lecturers, "Id", "Id", courses.LecturersId);
+            //ViewData["LecturersId"] = new SelectList(_context.Lecturers, "Id", "Id", courses.LecturersId);
             return View(courses);
         }
 
