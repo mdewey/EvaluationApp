@@ -16,14 +16,15 @@ namespace EvaluationApp.Controllers
 
         public LecturesController(ApplicationDbContext context)
         {
-            _context = context;    
+            _context = context;
         }
 
         // GET: Lectures
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int id)
         {
-            var applicationDbContext = _context.Lectures.Include(l => l.Courses);
-            return View(await applicationDbContext.ToListAsync());
+            var lectures = _context.Lectures.Include(l => l.Courses);
+            ViewData["courseId"] = id;
+            return View(await lectures.ToListAsync());
         }
 
         // GET: Lectures/Details/5
@@ -46,9 +47,9 @@ namespace EvaluationApp.Controllers
         }
 
         // GET: Lectures/Create
-        public IActionResult Create()
+        public IActionResult Create(int id)
         {
-            ViewData["CoursesId"] = new SelectList(_context.Courses, "Id", "Id");
+            ViewData["CoursesId"] = id;
             return View();
         }
 
@@ -57,10 +58,11 @@ namespace EvaluationApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Subject,LectureDate,CoursesId")] Lectures lectures)
+        public async Task<IActionResult> Create([Bind("Subject,LectureDate,CoursesId")] Lectures lectures)
         {
             if (ModelState.IsValid)
             {
+                // get the current course id, add automatically to lecture created
                 _context.Add(lectures);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");

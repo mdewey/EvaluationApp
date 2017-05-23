@@ -8,7 +8,7 @@ namespace EvaluationApp.Models
     public class Questions
     {
         public int Id { get; set; }
-        public DateTime TimeAsked { get; set; }
+        public DateTime TimeAsked { get; set; } = DateTime.Now;
         public string QuestionText { get; set; }
 
         public int StudentsId { get; set; }
