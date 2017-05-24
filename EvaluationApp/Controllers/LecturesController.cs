@@ -62,7 +62,7 @@ namespace EvaluationApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                // get the current course id, add automatically to lecture created
+                // current course id is added automatically to lecture when created
                 _context.Add(lectures);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");

@@ -79,10 +79,17 @@ namespace EvaluationApp
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                routes
+                    .MapRoute(
+                        name: "default",
+                        template: "{controller=Home}/{action=Index}/{id?}");
             });
+            //app.UseMvc(routes =>
+            //{
+            //        .MapRoute(
+            //            name: "evaluator",
+            //            template: "{controller=Lectures}/{action=Evaluator}/{slug}");
+            //});
         }
     }
 }

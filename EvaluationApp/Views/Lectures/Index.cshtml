@@ -4,23 +4,14 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Lectures Index</h2>
+@*<h2>Lectures Index</h2>*@
 
 <div id="mySidenav" class="sidenav">
-    @*<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>*@
     <center><img src="/images/whitegraph.png" alt="Logo" style="height:50px;width:50px" id="portallogo"></center>
     <a href="/Home/Index">Home</a>
-    <a href="#">View All Classes</a>
-    <a href="/Students/Details">View List of Students</a>
-    <a href="@Url.Action("Index", "Courses")">Edit Classes</a>
-    <a href="#">Create New Lecture</a>
-    <a href="#">Generate Lecture Link</a>
-    <a href="#">Go To Lecture Display</a>
+    <a href="#">Back</a>
     <a href="#">Log Out</a>
 </div>
-
-<!-- Use any element to open the sidenav -->
-<span onclick="openNav()">open</span>
 
 <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page) -->
 <div id="main">
@@ -38,9 +29,6 @@
                 <th>
                     @Html.DisplayNameFor(model => model.LectureDate)
                 </th>
-                @*<th>
-                    @Html.DisplayNameFor(model => model.Courses)
-                </th>*@
                 <th></th>
             </tr>
         </thead>
@@ -56,9 +44,6 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.LectureDate)
                     </td>
-                    @*<td>
-                        @Html.DisplayFor(modelItem => item.Courses.Id)
-                    </td>*@
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                         <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
