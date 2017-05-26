@@ -19,30 +19,30 @@ namespace EvaluationApp.Controllers
             _context = context;
         }
 
-        //Slug Generator
-        public void Slug()
-        {
-            int[] theArray = new int[1000];
-            int i = 0;
-            while (i < theArray.Length)
-            {
-                theArray[i] = ++i;
-            }
+        ////Slug Generator
+        //public void Slug()
+        //{
+        //    int[] theArray = new int[1000];
+        //    int i = 0;
+        //    while (i < theArray.Length)
+        //    {
+        //        theArray[i] = ++i;
+        //    }
 
-            Random r = new Random();
-            while (i > 1)
-            {
-                int j = r.Next(i);
-                int t = theArray[--i];
-                theArray[i] = theArray[j];
-                theArray[j] = t;
-            }
+        //    Random r = new Random();
+        //    while (i > 1)
+        //    {
+        //        int j = r.Next(i);
+        //        int t = theArray[--i];
+        //        theArray[i] = theArray[j];
+        //        theArray[j] = t;
+        //    }
 
-            for (i = 0; i < theArray.Length; ++i)
-            {
-                Console.WriteLine(theArray[i].ToString());
-            }
-        }
+        //    for (i = 0; i < theArray.Length; ++i)
+        //    {
+        //        Console.WriteLine(theArray[i].ToString());
+        //    }
+        //}
 
         //public ActionResult Show(string slug)
         //{

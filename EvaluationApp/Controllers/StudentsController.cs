@@ -27,10 +27,9 @@ namespace EvaluationApp.Controllers
         //    return View(await students.ToListAsync());
         //}
 
-        public IActionResult Portal(int? id)
+        public IActionResult Portal(int id)
         {
-            //TempData["LecturesId"] = id;
-            ViewBag.lecturesId = id;
+            ViewData["lecturesId"] = id;
             return View();
         }
 

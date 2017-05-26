@@ -1,4 +1,5 @@
 @model EvaluationApp.Models.Students
+    @*@model EvaluationApp.Models.ViewModels.EvaluatorViewModel*@
 
 @{
     ViewData["Title"] = "Index";
@@ -8,3 +9,24 @@
 name: @Model.Name
 <br/>
 id :@Model.Id
+
+
+
+@*@{ var upVoteClass = "";
+   var downVoteClass = "";
+
+    if (Model.UnderstandingYorN == true)
+    {
+        upVoteClass = "clicked";
+    }
+    else if (Model.UnderstandingYorN == false)
+    {
+        downVoteClass = "clicked";
+    }
+}
+
+<button btn="class btn-link @upVoteClass" onclick="(@Model.StudentId);"><i class="glyphicon glyphicon-arrow-up"></i></button>
+
+<button btn="class btn-link @downVoteClass" onclick="downVote(@Model.StudentId);"><i class="glyphicon glyphicon-arrow-down"></i></button>
+
+*@

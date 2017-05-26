@@ -85,11 +85,10 @@ namespace EvaluationApp
                         template: "{controller=Home}/{action=Index}/{id?}")
                     .MapRoute(
                         name: "studentsportal",
-                        template: "{controller=Students}/{action=Portal}/{slug}")
-                    .MapRoute(
-                        null,
-                        "lecture/{slug}",
-                        new { controller = "Students", action = "Show", slug = string.Empty });
+                        template: "{controller=Students}/{action=Portal}/{id}");
+                    //.MapRoute(
+                    //    name: "studentsportal",
+                    //    template: "{controller=Students}/{action=Portal}/{slug}")
             });
         }
     }

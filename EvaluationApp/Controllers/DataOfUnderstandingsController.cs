@@ -20,7 +20,7 @@ namespace EvaluationApp.Controllers
         }
 
         // GET: DataOfUnderstandings
-        public async Task<IActionResult> Index(string name, int id)
+        public async Task<IActionResult> Index(string name, int lectureId)
         {
             // query the database to check if the student exists (going to models)
             var student = _context.Students.FirstOrDefault(f => f.Name == name);
@@ -30,7 +30,7 @@ namespace EvaluationApp.Controllers
                 student = new Students
                 {
                     Name = name,
-                    LecturesId = id,
+                    LecturesId = lectureId,
                 };
                 _context.Students.Add(student);
                 await _context.SaveChangesAsync();
