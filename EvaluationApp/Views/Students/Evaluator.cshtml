@@ -1,19 +1,23 @@
-@model EvaluationApp.Models.Questions
+@model EvaluationApp.Models.ViewModels.EvaluatorViewModel
 
 @{
     ViewData["Title"] = "Evaluator";
 }
 
 <div class="evaluator">
+    
     <h2>Evaluator</h2>
-    <div class="votebutton">
-        <div class="arrow-up" onclick=""></div>
-        <h5>+ Understanding</h5>
-    </div>
+
+    <form asp-action="Create">
+        <div class="votebutton">
+            <button class="arrow-up" onclick="btn_Click"></button>
+            <h5>+ Understanding</h5>
+        </div>
+    </form>
 
     <div class="votebutton">
         <h5>- Understanding</h5>
-        <div class="arrow-down" onclick=""></div>
+        <div class="arrow-down"></div>
     </div>
 
     <div class="votebutton">
@@ -26,7 +30,7 @@
     <form asp-action="Edit">
         <div class="form-horizontal">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
+
 
             <div class="form-group">
                 <div class="col-md-10">

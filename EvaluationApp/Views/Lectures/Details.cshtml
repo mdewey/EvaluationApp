@@ -12,15 +12,7 @@
         <a asp-action="Index">Back</a>
         <a asp-action="Index">Log-Out</a>
     </div>
-    <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.LectureDate)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.LectureDate)
-            </dd>
-        </dl>
+
 </div>
 
 <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page) -->
@@ -29,7 +21,10 @@
         <h1 id="portaltitle">Lecture: @Html.DisplayFor(model => model.Subject)</h1>
         
         <h6>Click to generate unique lecture URL for student evaluator tool:</h6>
-        <button type="button" style="background-color:cornflowerblue; color:white; padding: 12px 28px;">Lecture URL Generator</button>
+        <button type="button" name="urlgenerator" style="background-color:cornflowerblue; color:white; padding: 12px 28px;">Lecture URL Generator</button>
+    
+        <h6>Click to generate unique lecture URL for student evaluator tool:</h6>
+        <button type="button" name="testing" style="background-color:cornflowerblue; color:white; padding: 12px 28px;">Student Portal</button>
 
     <hr />
     <div class="row">

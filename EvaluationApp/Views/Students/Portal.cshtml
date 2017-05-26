@@ -9,7 +9,7 @@
 
     <p>Please enter your name:</p>
 
-    <form asp-action="Create">
+    <form asp-action="Index" asp-controller="DataOfUnderstandings">
         <div class="form-horizontal">
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -22,6 +22,8 @@
             <div class="form-group">
                 <div class="col-md-10">
                     <input type="submit" value="Enter" class="btn btn-default" />
+                    <input type="hidden" asp-for="LecturesId" />
+                     @***************@
                 </div>
             </div>
         </div>

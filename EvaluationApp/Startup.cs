@@ -82,14 +82,15 @@ namespace EvaluationApp
                 routes
                     .MapRoute(
                         name: "default",
-                        template: "{controller=Home}/{action=Index}/{id?}");
+                        template: "{controller=Home}/{action=Index}/{id?}")
+                    .MapRoute(
+                        name: "studentsportal",
+                        template: "{controller=Students}/{action=Portal}/{slug}")
+                    .MapRoute(
+                        null,
+                        "lecture/{slug}",
+                        new { controller = "Students", action = "Show", slug = string.Empty });
             });
-            //app.UseMvc(routes =>
-            //{
-            //        .MapRoute(
-            //            name: "evaluator",
-            //            template: "{controller=Lectures}/{action=Evaluator}/{slug}");
-            //});
         }
     }
 }
