@@ -153,24 +153,9 @@ STUDENT  EVALUATOR
     margin: 0 auto;
 }
 
-/*.arrowtwo-border {
-    width: 0;
-    height: 0;
-    border-top: 15px solid transparent;
-    border-bottom: 15px solid transparent;
-    border-right: 16px solid #7F7F7F;
+#arrowbutton {
+    font-size: 40px;
 }
-
-.arrowtwo {
-    width: 0;
-    height: 0;
-    border-top: 9px solid transparent;
-    border-bottom: 9px solid transparent;
-    border-right: 9px solid #A6A6A6;
-    position: relative;
-    bottom: 9px;
-    left: 4px;
-}*/
 
 /*----------------
 ------------------
@@ -184,8 +169,10 @@ LECTURE   GRAPHING
     margin-right: 10px;
 }
 
-#datachart{
+#datachart {
     border: double;
     min-height: 700px;
     margin-left: 10px;
 }
+
+

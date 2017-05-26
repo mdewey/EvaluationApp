@@ -1,33 +1,35 @@
-﻿let upVote = (postId) => {
+﻿let upVote = (lectureId, studentId) => {
     let _data = {
-        id: postId
+        LecturesId: lectureId,
+        StudentsId: studentId
     }
 
     $.ajax({
-        url: "/vote/up",
+        url: "/DataOfUnderstandings/Up",
         data: JSON.stringify(_data),
         contentType: "application/json",
         type: "POST",
-        dataType: "html",
-        success: (newHtml) => {
-            $("#voteContainer-" + postId).html(newHtml);
+        dataType: "json",
+        success: (dataFromServer) => {
+            console.log("success", dataFromServer);
         }
     })
 }
 
-let downVote = (postId) => {
+let downVote = (lectureId, studentId) => {
     let _data = {
-        id: postId
+        LecturesId: lectureId,
+        StudentsId: studentId
     }
 
     $.ajax({
-        url: "/vote/down",
-        data: JSON.stringify({ id: postId }),
+        url: "/DataOfUnderstandings/Down",
+        data: JSON.stringify(_data),
         contentType: "application/json",
         type: "POST",
-        dataType: "html",
-        success: (newHtml) => {
-            $("#voteContainer-" + postId).html(newHtml);
+        dataType: "json",
+        success: (dataFromServer) => {
+            console.log("success", dataFromServer);
         }
     })
 }

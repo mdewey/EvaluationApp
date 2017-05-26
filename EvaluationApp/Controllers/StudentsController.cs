@@ -20,19 +20,13 @@ namespace EvaluationApp.Controllers
         }
 
         // Student Portal: Requests student name
-        //public async Task<IActionResult> Portal(int id)
-        //{
-        //    var students = _context.Students.Include(l => l.Lectures);
-        //    ViewData["lectureId"] = id;
-        //    return View(await students.ToListAsync());
-        //}
-
         public IActionResult Portal(int id)
         {
             ViewData["lecturesId"] = id;
             return View();
         }
 
+        // Will be deleted
         // Student Evaluator Tool
         public IActionResult Evaluator()
         {

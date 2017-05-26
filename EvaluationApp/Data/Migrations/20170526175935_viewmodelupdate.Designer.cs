@@ -8,9 +8,10 @@ using EvaluationApp.Data;
 namespace EvaluationApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170526175935_viewmodelupdate")]
+    partial class viewmodelupdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")
@@ -89,8 +90,6 @@ namespace EvaluationApp.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("LecturesId");
-
                     b.Property<int>("StudentsId");
 
                     b.Property<DateTime>("Time");
@@ -98,8 +97,6 @@ namespace EvaluationApp.Data.Migrations
                     b.Property<bool>("UnderstandingYorN");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("LecturesId");
 
                     b.HasIndex("StudentsId");
 
@@ -296,10 +293,6 @@ namespace EvaluationApp.Data.Migrations
 
             modelBuilder.Entity("EvaluationApp.Models.DataOfUnderstanding", b =>
                 {
-                    b.HasOne("EvaluationApp.Models.Lectures", "Lectures")
-                        .WithMany()
-                        .HasForeignKey("LecturesId");
-
                     b.HasOne("EvaluationApp.Models.Students", "Students")
                         .WithMany("DataOfUnderstanding")
                         .HasForeignKey("StudentsId")

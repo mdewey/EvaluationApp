@@ -10,10 +10,13 @@ namespace EvaluationApp.Models.ViewModels
         public DataOfUnderstanding DataOfUnderstanding { get; set; }
         public DateTime Time { get; set; }
         public bool UnderstandingYorN { get; set; }
-        public int StudentId { get; set; }
 
         public Questions Questions { get; set; }
         public DateTime TimeAsked { get; set; }
         public string QuestionText { get; set; }
+
+        public Students Students { get; set; }
+
+        public int LectureId { get; set; }
     }
 }

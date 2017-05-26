@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EvaluationApp.Data;
 using EvaluationApp.Models;
+using EvaluationApp.Models.ViewModels;
 
 namespace EvaluationApp.Controllers
 {
@@ -35,7 +36,38 @@ namespace EvaluationApp.Controllers
                 _context.Students.Add(student);
                 await _context.SaveChangesAsync();
             }
-            return View(student);
+            var vm = new EvaluatorViewModel
+            {
+                Students = student, 
+                LectureId = lectureId
+            };
+            return View(vm);
+        }
+
+        [HttpPost]
+        public ActionResult Up([FromBody][Bind("StudentsId,LecturesId")] DataOfUnderstanding data)
+        {
+            // student, lecture, time, t/f
+            data.Time = DateTime.Now;
+            data.UnderstandingYorN = true;
+            
+            // TODO: add to database
+            _context.Add(data);
+            _context.SaveChanges();
+            return Json("successful upvote");
+        }
+
+        [HttpPost]
+        public ActionResult Down([FromBody][Bind("StudentsId,LecturesId")] DataOfUnderstanding data)
+        {
+            // student, lecture, time, t/f
+            data.Time = DateTime.Now;
+            data.UnderstandingYorN = false;
+
+            // TODO: add to database
+            _context.Add(data);
+            _context.SaveChanges();
+            return Json("successful downvote");
         }
     }
 }

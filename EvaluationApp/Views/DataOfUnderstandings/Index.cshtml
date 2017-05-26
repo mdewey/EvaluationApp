@@ -1,32 +1,29 @@
-@model EvaluationApp.Models.Students
-    @*@model EvaluationApp.Models.ViewModels.EvaluatorViewModel*@
+@*@model EvaluationApp.Models.Students*@
+    @model EvaluationApp.Models.ViewModels.EvaluatorViewModel
 
 @{
     ViewData["Title"] = "Index";
 }
 
 <h2>Index</h2>
-name: @Model.Name
+name: @Model.Students.Name
 <br/>
-id :@Model.Id
+id :@Model.Students.Id
 
 
-
-@*@{ var upVoteClass = "";
+@{ var upVoteClass = "";
    var downVoteClass = "";
 
-    if (Model.UnderstandingYorN == true)
-    {
-        upVoteClass = "clicked";
-    }
-    else if (Model.UnderstandingYorN == false)
-    {
-        downVoteClass = "clicked";
-    }
+        if (upVoteClass == "clicked")
+        {
+            Model.UnderstandingYorN = true;
+        }
+        else if (downVoteClass == "clicked")
+        {
+            Model.UnderstandingYorN = false;
+        }
 }
 
-<button btn="class btn-link @upVoteClass" onclick="(@Model.StudentId);"><i class="glyphicon glyphicon-arrow-up"></i></button>
+<button btn="class btn-link @upVoteClass" onclick="upVote(@Model.LectureId, @Model.Students.Id);"><i class="glyphicon glyphicon-arrow-up" id="arrowbutton"></i></button>
 
-<button btn="class btn-link @downVoteClass" onclick="downVote(@Model.StudentId);"><i class="glyphicon glyphicon-arrow-down"></i></button>
-
-*@
+<button btn="class btn-link @downVoteClass" onclick="downVote(@Model.LectureId, @Model.Students.Id);"><i class="glyphicon glyphicon-arrow-down" id="arrowbutton"></i></button>
