@@ -1,6 +1,9 @@
-﻿body {
+﻿html, body {
     padding-left: 2em;
     padding-right: 2em;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
 }
 
 body .Home {
@@ -118,43 +121,53 @@ STUDENT  EVALUATOR
 
 .evaluator {
     text-align: center;
+    align-content: center;
     padding-top: 2em;
     border: ridge 5px;
     width: 30em;
     margin: 0 auto;
     background: -webkit-linear-gradient(left, #0f182b 0%,#2a3b53 33%,#2a3b53 66%,#0f182b 100%);
     color: silver;
+    min-height: 500px;
 }
 
-.votebutton {
+.updownbuttons {
+    text-align: center;
+    font-size: 6em;
+    padding-top: .25em;
+}
+
+.upbutton {
+    padding-bottom: .5em;
+}
+
+.downbutton {
+    padding-bottom: .25em;
+}
+
+.commentbox {
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+.submitquest {
+    text-align: center;
     padding-top: 2em;
-    padding-bottom: 2em;
+    padding-bottom: .25em;
 }
 
-.arrow-up {
-    width: 0;
-    height: 0;
-    border-left: 100px solid transparent;
-    border-right: 100px solid transparent;
-    border-bottom: 100px solid black;
-    background: -webkit-linear-gradient(top, #2c354e 0%,#576a97 100%);
-    z-index: 2;
+.grandParentContainer {
+    display: table;
+    height: 100%;
     margin: 0 auto;
 }
 
-.arrow-down {
-    width: 0;
-    height: 0;
-    border-left: 100px solid transparent;
-    border-right: 100px solid transparent;
-    border-top: 100px solid black;
-    background: -webkit-linear-gradient(top, #2c354e 0%,#576a97 100%);
-    z-index: 2;
-    margin: 0 auto;
-}
-
-#arrowbutton {
-    font-size: 40px;
+.parentContainer {
+    display: table-cell;
+    vertical-align: middle;
 }
 
 /*----------------
@@ -162,7 +175,6 @@ STUDENT  EVALUATOR
 LECTURE   GRAPHING
 ------------------
 ----------------*/
-
 #studentquestions {
     border: double;
     min-height: 700px;
