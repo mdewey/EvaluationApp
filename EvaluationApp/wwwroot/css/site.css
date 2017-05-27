@@ -133,11 +133,12 @@ STUDENT  EVALUATOR
 
 .updownbuttons {
     text-align: center;
-    font-size: 6em;
+    font-size: 2em;
     padding-top: .25em;
 }
 
 .upbutton {
+    padding-top: .5em;
     padding-bottom: .5em;
 }
 
