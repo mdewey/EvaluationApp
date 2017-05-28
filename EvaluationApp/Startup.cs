@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using EvaluationApp.Data;
 using EvaluationApp.Models;
 using EvaluationApp.Services;
+using DotNetify;
 
 namespace EvaluationApp
 {
@@ -39,6 +40,9 @@ namespace EvaluationApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMemoryCache();
+            services.AddSignalR();
+            services.AddDotNetify();
             // Add framework services.
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -76,6 +80,9 @@ namespace EvaluationApp
             app.UseIdentity();
 
             // Add external authentication middleware below. To configure them please see https://go.microsoft.com/fwlink/?LinkID=532715
+            app.UseWebSockets();
+            app.UseSignalR();
+            app.UseDotNetify();
 
             app.UseMvc(routes =>
             {

@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "697ec164038631d7f27a2a11d1d046ddb55fb16d"
+    "signature": "63db6d17cf6a6ca9f3263bf8482776581ec9fa86"
   },
   "compilationOptions": {
     "defines": [
@@ -23,6 +23,8 @@
     ".NETCoreApp,Version=v1.1": {
       "evaluationapp/1.0.0": {
         "dependencies": {
+          "DotNetify.Core": "2.1.0-pre",
+          "DotNetify.SignalR": "2.1.0-pre",
           "Microsoft.ApplicationInsights.AspNetCore": "2.0.0",
           "Microsoft.AspNetCore": "1.1.2",
           "Microsoft.AspNetCore.Authentication.Cookies": "1.1.2",
@@ -45,6 +47,82 @@
         },
         "compile": {
           "EvaluationApp.dll": {}
+        }
+      },
+      "dotnetify.core/2.1.0-pre": {
+        "dependencies": {
+          "Microsoft.Extensions.Caching.Memory": "1.1.2",
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "9.0.1",
+          "System.ComponentModel": "4.3.0",
+          "System.ComponentModel.TypeConverter": "4.3.0",
+          "System.Diagnostics.TraceSource": "4.0.0",
+          "System.Security.Claims": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.6/DotNetifyLib.Core.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.6/DotNetifyLib.Core.dll": {}
+        }
+      },
+      "dotnetify.signalr/2.1.0-pre": {
+        "dependencies": {
+          "DotNetify.Core": "2.1.0-pre",
+          "Gray.Microsoft.AspNetCore.SignalR.Server": "0.2.0-alpha1",
+          "Microsoft.AspNetCore.WebSockets": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection": "1.1.1",
+          "Microsoft.Extensions.Logging": "1.1.2",
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "lib/netstandard1.6/DotNetifyLib.SignalR.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.6/DotNetifyLib.SignalR.dll": {}
+        }
+      },
+      "gray.microsoft.aspnetcore.signalr.messaging/0.2.0": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.3.0",
+          "Microsoft.Extensions.Logging": "1.1.2",
+          "Microsoft.Extensions.Options": "1.1.2",
+          "System.Collections.Concurrent": "4.3.0",
+          "System.Diagnostics.Tools": "4.3.0",
+          "System.Dynamic.Runtime": "4.3.0",
+          "System.Linq.Expressions": "4.3.0",
+          "System.Reflection.Emit": "4.3.0",
+          "System.Reflection.Emit.ILGeneration": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Reflection.Primitives": "4.3.0",
+          "System.Security.Cryptography.Algorithms": "4.3.0",
+          "System.Text.Encoding.Extensions": "4.3.0",
+          "System.Threading.Thread": "4.3.0",
+          "System.Threading.ThreadPool": "4.3.0",
+          "System.Threading.Timer": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Gray.Microsoft.AspNetCore.SignalR.Messaging.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Gray.Microsoft.AspNetCore.SignalR.Messaging.dll": {}
+        }
+      },
+      "gray.microsoft.aspnetcore.signalr.server/0.2.0-alpha1": {
+        "dependencies": {
+          "Gray.Microsoft.AspNetCore.SignalR.Messaging": "0.2.0",
+          "Microsoft.AspNetCore.DataProtection": "1.1.2",
+          "Microsoft.AspNetCore.Hosting.Abstractions": "1.1.2",
+          "Microsoft.AspNetCore.Http.Extensions": "1.1.2",
+          "Microsoft.Extensions.DependencyModel": "1.1.2",
+          "Newtonsoft.Json": "9.0.1",
+          "System.Runtime.Serialization.Primitives": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.6/Gray.Microsoft.AspNetCore.SignalR.Server.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.6/Gray.Microsoft.AspNetCore.SignalR.Server.dll": {}
         }
       },
       "microsoft.applicationinsights/2.2.0": {
@@ -800,6 +878,19 @@
         },
         "compile": {
           "lib/netstandard1.3/Microsoft.AspNetCore.StaticFiles.dll": {}
+        }
+      },
+      "microsoft.aspnetcore.websockets/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Extensions": "1.1.2",
+          "Microsoft.Extensions.Options": "1.1.2",
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.WebSockets.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.WebSockets.dll": {}
         }
       },
       "microsoft.aspnetcore.webutilities/1.1.2": {
@@ -1768,6 +1859,32 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Diagnostics.StackTrace.dll": {}
+        }
+      },
+      "system.diagnostics.tracesource/4.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0",
+          "runtime.native.System": "4.3.0"
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netstandard1.3/System.Diagnostics.TraceSource.dll": {
+            "rid": "unix",
+            "assetType": "runtime"
+          },
+          "runtimes/win/lib/netstandard1.3/System.Diagnostics.TraceSource.dll": {
+            "rid": "win",
+            "assetType": "runtime"
+          }
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Diagnostics.TraceSource.dll": {}
         }
       },
       "system.interactive.async/3.0.0": {
@@ -3547,6 +3664,34 @@
       "serviceable": false,
       "sha512": ""
     },
+    "dotnetify.core/2.1.0-pre": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-e1K9Ilm0U0fFscFVk8MPiJal/YQfbdrbkm1Lumtf8UBHT1p1ShGHAznklFJJ/0GZwhrU9JZ2/I0rRfmcS8Ce/Q==",
+      "path": "dotnetify.core/2.1.0-pre",
+      "hashPath": "dotnetify.core.2.1.0-pre.nupkg.sha512"
+    },
+    "dotnetify.signalr/2.1.0-pre": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-k9eOScUkJo9ksjo0MLVFBs7kr5Smp9DM5t5SqP+OBD2ExMd0X5nnyI9BY2grFNib9Y0QjFD7HUnwr7lgtp6ejQ==",
+      "path": "dotnetify.signalr/2.1.0-pre",
+      "hashPath": "dotnetify.signalr.2.1.0-pre.nupkg.sha512"
+    },
+    "gray.microsoft.aspnetcore.signalr.messaging/0.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-f6ADNhKb2bJEIOL8kCR9ypGfKjiUa21KtIAa2mM2zjDNbddBgLRYE5k05aqTB7KqivFwp1MqhrJwiMrGsqNF8w==",
+      "path": "gray.microsoft.aspnetcore.signalr.messaging/0.2.0",
+      "hashPath": "gray.microsoft.aspnetcore.signalr.messaging.0.2.0.nupkg.sha512"
+    },
+    "gray.microsoft.aspnetcore.signalr.server/0.2.0-alpha1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MyB2gibCua7nxjFaP+PHO/LdgV4xkJRtDFKrN5MNOcycky9yhCG3JtxFbm3UFpo/24GEmrmSgzC0pxIIwr3MVg==",
+      "path": "gray.microsoft.aspnetcore.signalr.server/0.2.0-alpha1",
+      "hashPath": "gray.microsoft.aspnetcore.signalr.server.0.2.0-alpha1.nupkg.sha512"
+    },
     "microsoft.applicationinsights/2.2.0": {
       "type": "package",
       "serviceable": true,
@@ -3882,6 +4027,13 @@
       "sha512": "sha512-JtfaHhKqhjZXvVfDUkpOwZJ9t/64v8MeGQ9Te+5GKajCUswv49DjZcS5oF8qu8kqv35eeTYmhOWd0VxIu6rGXQ==",
       "path": "microsoft.aspnetcore.staticfiles/1.1.2",
       "hashPath": "microsoft.aspnetcore.staticfiles.1.1.2.nupkg.sha512"
+    },
+    "microsoft.aspnetcore.websockets/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vhA8iwDMjL+C/iNKubp9qBjkeh0b1bJyl3nOiL+B15yiUeEcnvx7vPXV2eyIX792dVCqn+hyYCatm/ST1Cg0Hg==",
+      "path": "microsoft.aspnetcore.websockets/1.0.0",
+      "hashPath": "microsoft.aspnetcore.websockets.1.0.0.nupkg.sha512"
     },
     "microsoft.aspnetcore.webutilities/1.1.2": {
       "type": "package",
@@ -4351,6 +4503,13 @@
       "sha512": "sha512-BiHg0vgtd35/DM9jvtaC1eKRpWZxr0gcQd643ABG7GnvSlf5pOkY2uyd42mMOJoOmKvnpNj0F4tuoS1pacTwYw==",
       "path": "system.diagnostics.stacktrace/4.3.0",
       "hashPath": "system.diagnostics.stacktrace.4.3.0.nupkg.sha512"
+    },
+    "system.diagnostics.tracesource/4.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6WVCczFZKXwpWpzd/iJkYnsmWTSFFiU24Xx/YdHXBcu+nFI/ehTgeqdJQFbtRPzbrO3KtRNjvkhtj4t5/WwWsA==",
+      "path": "system.diagnostics.tracesource/4.0.0",
+      "hashPath": "system.diagnostics.tracesource.4.0.0.nupkg.sha512"
     },
     "system.interactive.async/3.0.0": {
       "type": "package",

@@ -80,6 +80,7 @@
     <Content Include="wwwroot\js\agency.min.js" />
     <Content Include="wwwroot\js\buttons.js" />
     <Content Include="wwwroot\js\jqBootstrapValidation.js" />
+    <Content Include="wwwroot\js\LiveChart.jsx" />
     <Content Include="wwwroot\js\studentSignUp.js" />
     <Content Include="wwwroot\lib\agencybootstrap\.gitignore" />
     <Content Include="wwwroot\lib\agencybootstrap\css\agency.css" />
@@ -160,6 +161,8 @@
     <Content Include="wwwroot\lib\agencybootstrap\vendor\tether\tether.min.js" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="DotNetify.Core" Version="2.1.0-pre" />
+    <PackageReference Include="DotNetify.SignalR" Version="2.1.0-pre" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="1.1.2" />
