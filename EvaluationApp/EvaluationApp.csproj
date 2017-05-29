@@ -79,6 +79,8 @@
     <Content Include="wwwroot\js\agency.js" />
     <Content Include="wwwroot\js\agency.min.js" />
     <Content Include="wwwroot\js\buttons.js" />
+    <Content Include="wwwroot\js\chart.d.ts" />
+    <Content Include="wwwroot\js\chart.min.js" />
     <Content Include="wwwroot\js\jqBootstrapValidation.js" />
     <Content Include="wwwroot\js\LiveChart.jsx" />
     <Content Include="wwwroot\js\LiveChart.ts" />

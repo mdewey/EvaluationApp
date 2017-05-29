@@ -29,11 +29,11 @@ namespace EvaluationApp.Controllers
             return File(System.IO.File.OpenRead(htmlFile), "text/html");
         }
 
-        //[Route("lecture/{slug}", Name = "UserProfile")]
-        public ActionResult StudentPortal()
-        {
-            return RedirectToAction("/Students/Portal");
-        }
+        //// GET: Lectures/ChangeThis
+        //public IActionResult ChangeThis(DataOfUnderstanding dataOfUnderstanding)
+        //{
+        //    //returns the all the data of understanding for a lecture as an ?array of objects;
+        //}
 
         // GET: Lectures
         public async Task<IActionResult> Index(int id)

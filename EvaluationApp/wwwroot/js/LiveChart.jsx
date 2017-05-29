@@ -12,9 +12,9 @@
     render() {
         return (
             {/* Using react-chartjs https://github.com/reactjs/react-chartjs */ }
-            < div className= "row" >
+            <div className= "row">
                     <LiveLineChart data={this.state.InitialLineData} nextData={this.state.NextLineData} />
-            </div >
+            </div>
          );
        }
     });
