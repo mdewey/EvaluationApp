@@ -7,82 +7,32 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EvaluationApp.Data;
 using EvaluationApp.Models;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
 
 namespace EvaluationApp.Controllers
 {
     public class LecturesController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IHostingEnvironment _hostingEnvironment;
 
-        public LecturesController(ApplicationDbContext context)
+        public LecturesController(ApplicationDbContext context, IHostingEnvironment hostingEnvironment)
         {
             _context = context;
+            _hostingEnvironment = hostingEnvironment;
         }
 
-        ////Slug Generator
-        //public void Slug()
-        //{
-        //    int[] theArray = new int[1000];
-        //    int i = 0;
-        //    while (i < theArray.Length)
-        //    {
-        //        theArray[i] = ++i;
-        //    }
-
-        //    Random r = new Random();
-        //    while (i > 1)
-        //    {
-        //        int j = r.Next(i);
-        //        int t = theArray[--i];
-        //        theArray[i] = theArray[j];
-        //        theArray[j] = t;
-        //    }
-
-        //    for (i = 0; i < theArray.Length; ++i)
-        //    {
-        //        Console.WriteLine(theArray[i].ToString());
-        //    }
-        //}
-
-        //public ActionResult Show(string slug)
-        //{
-        //    if (slug.Equals(string.Empty))
-        //    {
-        //        return this.HttpNotFound();
-        //    }
-
-        //    var slugPost = slugPostRepository.FindPost(slug);
-        //    if (slugPost == null)
-        //    {
-        //        return this.HttpNotFound();
-        //    }
-
-        //    return View(slugPost);
-        //}
+        public IActionResult _Graph()
+        {
+            var htmlFile = Path.Combine(_hostingEnvironment.ContentRootPath, "Views\\LiveChart.html");
+            return File(System.IO.File.OpenRead(htmlFile), "text/html");
+        }
 
         //[Route("lecture/{slug}", Name = "UserProfile")]
         public ActionResult StudentPortal()
         {
             return RedirectToAction("/Students/Portal");
-        }
-
-        [HttpPost]
-        [Route("/lecture/{slug}")]
-        public IActionResult Post(int slug)
-        {
-            string buttonClicked = "";
-
-            if (HttpContext.Request.Form.ContainsKey("urlgenerator"))
-            {
-                buttonClicked = "urlgenerator";
-            }
-            else if (HttpContext.Request.Form.ContainsKey("testing"))
-            {
-                buttonClicked = "testing";
-                return RedirectToAction("/Students/Portal");
-            }
-
-            return View("Index");
         }
 
         // GET: Lectures

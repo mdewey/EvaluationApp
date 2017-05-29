@@ -10,7 +10,7 @@ namespace EvaluationApp.Models.ViewModels
 {
     public class LiveChartVM : BaseVM
     {
-        private DateTime _dateTime;
+        private Timer _timer;
         private int _count = 20;
         private const int _timeInterval = 1000;
         private Random _random = new Random();
@@ -27,17 +27,17 @@ namespace EvaluationApp.Models.ViewModels
 
         public LiveChartVM()
         {
-            _dateTime = new DateTime(state =>
+            _timer = new Timer(state =>
             {
                 NextLineData = new int[] { _count++, _random.Next(1, 50) };
-
+  
                 PushUpdates(); // Base method to push changed properties from all active view models to the browser.
             }, null, _timeInterval, _timeInterval);
         }
 
         public override void Dispose()
         {
-            _dateTime.Dispose();
+            _timer.Dispose();
             base.Dispose();   // Call base.Dispose to raise Disposed event.
         }
     }

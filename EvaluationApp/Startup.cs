@@ -93,9 +93,6 @@ namespace EvaluationApp
                     .MapRoute(
                         name: "studentsportal",
                         template: "{controller=Students}/{action=Portal}/{id}");
-                    //.MapRoute(
-                    //    name: "studentsportal",
-                    //    template: "{controller=Students}/{action=Portal}/{slug}")
             });
         }
     }

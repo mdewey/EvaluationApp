@@ -18,5 +18,6 @@ namespace EvaluationApp.Models.ViewModels
         public Students Students { get; set; }
 
         public int LectureId { get; set; }
+        public string Subject { get; set; }
     }
 }

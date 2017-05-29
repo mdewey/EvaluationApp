@@ -1,4 +1,4 @@
-@model EvaluationApp.Models.Lectures
+@model EvaluationApp.Models.ViewModels.EvaluatorViewModel
 
 @{
     ViewData["Title"] = "Details";
@@ -27,7 +27,7 @@
     <div class="row">
         <div class="col-md-4">
             <div id="studentquestions">Future Student Questions</div>
-            @{ Html.RenderPartial("_StudentComments"); }
+            @*@{ Html.RenderPartial("_StudentComments"); }*@
         </div>
         <div class="col-md-8"> 
             <div id="datachart">Future Graph of Feedback Data</div>

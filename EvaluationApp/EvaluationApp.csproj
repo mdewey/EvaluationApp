@@ -81,6 +81,7 @@
     <Content Include="wwwroot\js\buttons.js" />
     <Content Include="wwwroot\js\jqBootstrapValidation.js" />
     <Content Include="wwwroot\js\LiveChart.jsx" />
+    <Content Include="wwwroot\js\LiveChart.ts" />
     <Content Include="wwwroot\js\studentSignUp.js" />
     <Content Include="wwwroot\lib\agencybootstrap\.gitignore" />
     <Content Include="wwwroot\lib\agencybootstrap\css\agency.css" />

@@ -1,2 +1,6 @@
-@model IEnumerable<EvaluationApp.Models.DataOfUnderstanding>
+@model EvaluationApp.Models.ViewModels.LiveChartVM
 
+<h3>Live Chart</h3>
+<div data-vm="LiveChartVM">
+    <canvas data-bind="vmOn: { Data: updateChart }" />
+</div>
