@@ -19,6 +19,17 @@ namespace EvaluationApp.Controllers
             _context = context;
         }
 
+        //GET with the return as array of [1, 10] where 1 is the time and 10 is the level of understanding
+        // GET: Lectures/GetDataPoints
+        public static DataOfUnderstanding[] GetDataPoints(int LecturesId)
+        {
+            var data = GetDataPoints(LecturesId);
+            var pointX = data.FirstOrDefault(d => d.Time);
+            var pointY = (data.FirstOrDefault(d => d.UnderstandingYorN) / data.numOfStudents);
+            var dataPoint = [pointX, pointY];
+            return new DataOfUnderstanding[dataPoint];
+        }
+
         // GET: Lectures
         public async Task<IActionResult> Index(int id)
         {

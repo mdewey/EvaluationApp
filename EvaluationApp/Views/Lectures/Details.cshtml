@@ -24,18 +24,11 @@
         <button type="button" name="urlgenerator" style="background-color:cornflowerblue; color:white; padding: 12px 28px;">Lecture URL Generator</button>
     
     <hr />
-    <div class="row">
-        <div class="col-md-4">
-            <div id="studentquestions">Future Student Questions</div>
+        <div id="datachart">@Html.Partial("_GraphPartial")</div>
+        <div id="studentquestions">Future Student Questions</div>
             @*@{ Html.RenderPartial("_StudentQuestions"); }*@
-        </div>
-        <div class="col-md-8"> 
-            <div id="datachart">@Html.Partial("_GraphPartial")</div>
-        </div>
+
     </div>
-
-
-</div>
 
 @section Scripts{
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>

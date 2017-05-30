@@ -176,16 +176,16 @@ STUDENT  EVALUATOR
 LECTURE   GRAPHING
 ------------------
 ----------------*/
-#studentquestions {
-    border: double;
-    min-height: 700px;
-    margin-right: 10px;
-}
 
 #datachart {
     border: double;
-    /*min-height: 700px;*/
-    margin-left: 10px;
+    margin-right: 2em;
 }
 
+#studentquestions {
+    border: double;
+    min-height: 200px;
+    margin-right: 2em;
+    margin-top: 2em;
+}
 
