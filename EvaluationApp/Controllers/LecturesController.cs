@@ -19,17 +19,35 @@ namespace EvaluationApp.Controllers
             _context = context;
         }
 
-        //GET with the return as array of [1, 10] where 1 is the time and 10 is the level of understanding
         // GET: Lectures/GetDataPoints
-        public DataOfUnderstanding[] GetDataPoints(int LecturesId)
+        public async Task<List<List<long>>> Get(int id)
         {
-            var numOfStudents = _context.Students.Where(s => s.LecturesId == LecturesId).Count();
-            var data = _context.DataOfUnderstanding.Where(d => d.Lectures.Id == LecturesId);
-            var pointX = data.FirstOrDefault(d => d.Time);
-            var pointY = (data.FirstOrDefault(d => d.UnderstandingYorN) / numOfStudents);
-            var dataPoint = [pointX, pointY];
-            return new DataOfUnderstanding[dataPoint];
+            var lectureId = id;
+            var numOfStudents = _context.Students.Count(s => s.LecturesId == lectureId);
+            var allData = _context.DataOfUnderstanding.Where(w => w.LecturesId == lectureId).ToList();
+            var grouped = allData.GroupBy(x =>
+            {
+                var stamp = x.Time;
+                stamp = stamp.AddSeconds(-(stamp.Second % 5));
+                stamp = stamp.AddMilliseconds(-stamp.Millisecond - 1000 * stamp.Second);
+                return stamp.Ticks;
+            }, value => value);
+
+            var rv = new List<List<long>>();
+            var count = 0;
+            foreach (var item in grouped)
+            {
+                var dataPoint = new List<long>();
+                var trued = item.Count(w => w.UnderstandingYorN);
+                var falsed = item.Count(w => !w.UnderstandingYorN);
+                var total = trued - falsed;
+                dataPoint.Add(count++);
+                dataPoint.Add(total);
+                rv.Add(dataPoint);
+            }
+            return rv;
         }
+
 
         // GET: Lectures
         public async Task<IActionResult> Index(int id)

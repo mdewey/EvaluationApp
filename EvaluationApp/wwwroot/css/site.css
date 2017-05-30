@@ -179,13 +179,12 @@ LECTURE   GRAPHING
 
 #datachart {
     border: double;
-    margin-right: 2em;
+    margin-right: 5em;
 }
 
 #studentquestions {
     border: double;
     min-height: 200px;
-    margin-right: 2em;
+    margin-right: 5em;
     margin-top: 2em;
 }
-

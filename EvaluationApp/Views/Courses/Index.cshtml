@@ -17,8 +17,9 @@
     <h1 id="portaltitle">Courses</h1>
 
     <p>
-        <a asp-action="Create">Create New</a>
-        <button asp-action="Create">Create New</button>
+        <button type="Button" class="createNewButton" onclick="location.href='@Url.Action("Create", "Courses")'">
+            Create New
+        </button>
     </p>
 
     <table class="table">
@@ -28,7 +29,7 @@
                     @Html.DisplayNameFor(model => model.Name)
                 </th>
                 <th>
-                    Course Code @*@Html.DisplayNameFor(model => model.CourseCode)*@
+                    Course Code
                 </th>
             </tr>
         </thead>
@@ -46,7 +47,6 @@
                         </td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                        @*<a asp-action="Details" asp-route-id="@item.Id">Details</a> |*@
                         <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                     </td>
                 </tr>
