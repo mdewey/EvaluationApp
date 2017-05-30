@@ -21,11 +21,12 @@ namespace EvaluationApp.Controllers
 
         //GET with the return as array of [1, 10] where 1 is the time and 10 is the level of understanding
         // GET: Lectures/GetDataPoints
-        public static DataOfUnderstanding[] GetDataPoints(int LecturesId)
+        public DataOfUnderstanding[] GetDataPoints(int LecturesId)
         {
+            var numOfStudents = _context.Students.Where(s => s.LecturesId == LecturesId).Count();
             var data = GetDataPoints(LecturesId);
             var pointX = data.FirstOrDefault(d => d.Time);
-            var pointY = (data.FirstOrDefault(d => d.UnderstandingYorN) / data.numOfStudents);
+            var pointY = (data.FirstOrDefault(d => d.UnderstandingYorN) / numOfStudents);
             var dataPoint = [pointX, pointY];
             return new DataOfUnderstanding[dataPoint];
         }

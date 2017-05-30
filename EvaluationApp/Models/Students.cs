@@ -11,6 +11,7 @@ namespace EvaluationApp.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public Guid TempKey { get; set; } = Guid.NewGuid();
+        
 
         public ICollection<DataOfUnderstanding> DataOfUnderstanding { get; set; }
 
