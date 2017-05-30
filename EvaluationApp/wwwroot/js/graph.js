@@ -1,11 +1,12 @@
 ﻿google.charts.load('current', { packages: ['corechart', 'line'] });
-google.charts.setOnLoadCallback(drawLineColors);
+google.charts.setOnLoadCallback(GetDataPoints);
 
 function drawLineColors() {
-    var data = new google.visualization.DataTable();
+    var data = new google.visualization.DataTable(dataFromServer);
     data.addColumn('number', 'X');
     data.addColumn('number', 'StudentData');
 
+    console.log('got here')
 
     data.addRows([
         [0.00, 0], [0.05, 10], [0.10, 20], [0.15, 30], [0.20, 40], [0.25, 50],
@@ -31,14 +32,14 @@ function drawLineColors() {
 function GetDataPoints() {
     jQuery.support.cors = true;
     $.ajax({
-        url: 'http://localhost:49786/lectures/details',
+        url: 'http://localhost:49786/api/Data?id=1',
         type: 'GET',
         dataType: 'json',
         success: function (data) {
-            WriteResponses(data);
+            drawLineColors(data);
         },
         error: function (x, y) {
             alert(x + '\n' + y + '\n');
-
+        }
     });
 }
