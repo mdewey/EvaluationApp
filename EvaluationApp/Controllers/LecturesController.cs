@@ -24,7 +24,7 @@ namespace EvaluationApp.Controllers
         public DataOfUnderstanding[] GetDataPoints(int LecturesId)
         {
             var numOfStudents = _context.Students.Where(s => s.LecturesId == LecturesId).Count();
-            var data = GetDataPoints(LecturesId);
+            var data = _context.DataOfUnderstanding.Where(d => d.Lectures.Id == LecturesId);
             var pointX = data.FirstOrDefault(d => d.Time);
             var pointY = (data.FirstOrDefault(d => d.UnderstandingYorN) / numOfStudents);
             var dataPoint = [pointX, pointY];
