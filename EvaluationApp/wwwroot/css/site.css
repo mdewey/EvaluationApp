@@ -184,7 +184,7 @@ LECTURE   GRAPHING
 
 #datachart {
     border: double;
-    min-height: 700px;
+    /*min-height: 700px;*/
     margin-left: 10px;
 }
 

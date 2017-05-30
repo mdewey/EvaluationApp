@@ -27,14 +27,17 @@
     <div class="row">
         <div class="col-md-4">
             <div id="studentquestions">Future Student Questions</div>
-            @*@{ Html.RenderPartial("_StudentComments"); }*@
+            @*@{ Html.RenderPartial("_StudentQuestions"); }*@
         </div>
         <div class="col-md-8"> 
-            <div id="datachart">Future Graph of Feedback Data</div>
-            <div class="graphPartial">
-                @Html.Partial("_GraphPartial");
-            </div>
+            <div id="datachart">@Html.Partial("_GraphPartial")</div>
         </div>
     </div>
 
+
 </div>
+
+@section Scripts{
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="/js/graph.js"></script>
+}
