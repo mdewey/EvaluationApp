@@ -27,3 +27,18 @@ function drawLineColors() {
     var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
     chart.draw(data, options);
 };
+
+function GetDataPoints() {
+    jQuery.support.cors = true;
+    $.ajax({
+        url: 'http://localhost:49786/lectures/details',
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            WriteResponses(data);
+        },
+        error: function (x, y) {
+            alert(x + '\n' + y + '\n');
+
+    });
+}

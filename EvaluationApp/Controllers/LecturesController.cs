@@ -19,7 +19,7 @@ namespace EvaluationApp.Controllers
             _context = context;
         }
 
-        // GET: Lectures/GetDataPoints
+        // GET: Lectures/Get
         public async Task<List<List<long>>> Get(int id)
         {
             var lectureId = id;
