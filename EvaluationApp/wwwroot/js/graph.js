@@ -23,17 +23,18 @@ function drawLineColors(dataFromServer) {
     chart.draw(data, options);
 };
 
-var refreshId = setInterval(function GetDataPoints() {
+function GetDataPoints() {
     jQuery.support.cors = true;
     $.ajax({
         url: '/api/Data?id=' + $("#LectureId").val(),
         type: 'GET',
         dataType: 'json',
         success: function (dataFromServer) {
+            setTimeout(GetDataPoints, 1000)
             drawLineColors(dataFromServer);
         },
         error: function (x, y) {
-            alert(x + '\n' + y + '\n');
+            console.log(x, y);
         }
     });
-}, 1000);
+};
