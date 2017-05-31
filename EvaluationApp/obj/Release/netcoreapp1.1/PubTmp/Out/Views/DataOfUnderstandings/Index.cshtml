@@ -1,0 +1,61 @@
+@model EvaluationApp.Models.ViewModels.EvaluatorViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="grandParentContainer">
+    <div class="parentContainer">
+
+        <div class="evaluator">
+
+            <h2>Evaluator</h2>
+
+            @{ var upVoteClass = "";
+                var downVoteClass = "";
+
+                if (upVoteClass == "clicked")
+                {
+                    Model.UnderstandingYorN = true;
+                }
+                else if (downVoteClass == "clicked")
+                {
+                    Model.UnderstandingYorN = false;
+                }
+            }
+
+            <div class="updownbuttons">
+                <div class="upbutton">
+                    <button btn="class btn-link @upVoteClass" onclick="upVote(@Model.LectureId, @Model.Students.Id);"><i class="fa fa-toggle-up fa-5x" id="arrowbutton"></i></button>
+                </div>
+                <div class="downbutton">
+                    <button btn="class btn-link @downVoteClass" onclick="downVote(@Model.LectureId, @Model.Students.Id);"><i class="fa fa-toggle-down fa-5x" id="arrowbutton"></i></button>
+                </div>
+            </div>
+
+            <div class="submitquest">Submit Questions Here:</div>
+
+            <div class="commentbox">
+                <form asp-action="Edit">
+                    <div class="form-horizontal">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <input asp-for="QuestionText" class="form-control" />
+                                <span asp-validation-for="QuestionText" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <input type="submit" value="Submit" class="btn btn-default" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

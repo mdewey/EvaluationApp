@@ -74,7 +74,7 @@ namespace EvaluationApp.Controllers
                 if (result.Succeeded)
                 {
                     _logger.LogInformation(1, "User logged in.");
-                    return RedirectToAction("Portal","Lecturers");
+                    return RedirectToAction("Index","Courses");
                 }
                 if (result.RequiresTwoFactor)
                 {
