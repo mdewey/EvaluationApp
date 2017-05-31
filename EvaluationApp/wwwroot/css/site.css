@@ -110,7 +110,14 @@ STUDENT     PORTAL
     margin: 0 auto;
     background: -webkit-linear-gradient(left, #0f182b 0%,#2a3b53 33%,#2a3b53 66%,#0f182b 100%);
     color: silver;
-    min-height: 40em;
+    min-height: 640px;
+}
+
+.form-control {
+    display: inline-block;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 /*----------------
@@ -188,3 +195,4 @@ LECTURE   GRAPHING
     margin-right: 5em;
     margin-top: 2em;
 }
+

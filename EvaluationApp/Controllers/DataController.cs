@@ -18,7 +18,6 @@ namespace EvaluationApp.Controllers
     [Route("api/Data")]
     public class DataController : Controller
     {
-
         private readonly ApplicationDbContext _context;
 
         public DataController(ApplicationDbContext context)
