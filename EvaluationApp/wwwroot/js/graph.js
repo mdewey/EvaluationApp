@@ -1,14 +1,13 @@
 ﻿google.charts.load('current', { packages: ['corechart', 'line'] });
 google.charts.setOnLoadCallback(GetDataPoints);
+var graphData = [];
 
 function drawLineColors(dataFromServer) {
     var data = new google.visualization.DataTable();
     data.addColumn('number', 'X');
     data.addColumn('number', 'StudentData');
-
-    //console.log('got here')
-
-    data.addRows(dataFromServer);
+    graphData.push(dataFromServer);
+    data.addRows(graphData);
 
     var options = {
         hAxis: {
@@ -24,10 +23,10 @@ function drawLineColors(dataFromServer) {
     chart.draw(data, options);
 };
 
-function GetDataPoints() {
+var refreshId = setInterval(function GetDataPoints() {
     jQuery.support.cors = true;
     $.ajax({
-        url: '/api/Data?id=1', 
+        url: '/api/Data?id=' + $("#LectureId").val(),
         type: 'GET',
         dataType: 'json',
         success: function (dataFromServer) {
@@ -37,4 +36,4 @@ function GetDataPoints() {
             alert(x + '\n' + y + '\n');
         }
     });
-}
+}, 1000);

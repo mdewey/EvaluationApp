@@ -24,7 +24,9 @@ namespace EvaluationApp.Controllers
         {
             var lectures = _context.Lectures.Include(l => l.Courses);
             ViewData["courseId"] = id;
-            return View(await lectures.ToListAsync());
+            var vm = await lectures.ToListAsync();
+            var Ienum = vm as IEnumerable<Lectures>;
+            return View(Ienum);
         }
 
         // GET: Lectures/Details/5
