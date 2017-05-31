@@ -1,8 +1,8 @@
 ﻿google.charts.load('current', { packages: ['corechart', 'line'] });
 google.charts.setOnLoadCallback(GetDataPoints);
 
-function drawLineColors() {
-    var data = new google.visualization.DataTable(dataFromServer);
+function drawLineColors(dataFromServer) {
+    var data = new google.visualization.DataTable();
     data.addColumn('number', 'X');
     data.addColumn('number', 'StudentData');
 

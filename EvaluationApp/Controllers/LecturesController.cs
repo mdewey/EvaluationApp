@@ -19,36 +19,6 @@ namespace EvaluationApp.Controllers
             _context = context;
         }
 
-        // GET: Lectures/Get
-        public async Task<List<List<long>>> Get(int id)
-        {
-            var lectureId = id;
-            var numOfStudents = _context.Students.Count(s => s.LecturesId == lectureId);
-            var allData = _context.DataOfUnderstanding.Where(w => w.LecturesId == lectureId).ToList();
-            var grouped = allData.GroupBy(x =>
-            {
-                var stamp = x.Time;
-                stamp = stamp.AddSeconds(-(stamp.Second % 5));
-                stamp = stamp.AddMilliseconds(-stamp.Millisecond - 1000 * stamp.Second);
-                return stamp.Ticks;
-            }, value => value);
-
-            var rv = new List<List<long>>();
-            var count = 0;
-            foreach (var item in grouped)
-            {
-                var dataPoint = new List<long>();
-                var trued = item.Count(w => w.UnderstandingYorN);
-                var falsed = item.Count(w => !w.UnderstandingYorN);
-                var total = trued - falsed;
-                dataPoint.Add(count++);
-                dataPoint.Add(total);
-                rv.Add(dataPoint);
-            }
-            return rv;
-        }
-
-
         // GET: Lectures
         public async Task<IActionResult> Index(int id)
         {
