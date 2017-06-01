@@ -5,18 +5,28 @@ var graphData = [];
 function drawLineColors(dataFromServer) {
     var data = new google.visualization.DataTable();
     data.addColumn('number', 'X');
-    data.addColumn('number', 'StudentData');
+    data.addColumn('number', 'Level of Understanding');
     graphData.push(dataFromServer);
     data.addRows(graphData);
 
     var options = {
-        hAxis: {
-            title: 'Time (0.05 seconds)'
-        },
         vAxis: {
+            format: '##',
+            minValue: 0,
+            maxValue: 100,
             title: 'LevelofUnderstanding (%)'
         },
-        colors: ['#a52714', '#097138']
+        hAxis: {
+            title: 'Time (0.05 seconds)',
+            format: 'scientific', 
+            //units: {
+            //    seconds: { format: ['hh:mm:ss a', 'ss'] }
+            //},    
+        },
+        colors: ['#1c91c0', '#097138'],
+        lineWidth: 5,
+        gridlines: { count: -1 },
+        //title: 'Lecture Level of Understanding Graph',
     };
 
     var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
