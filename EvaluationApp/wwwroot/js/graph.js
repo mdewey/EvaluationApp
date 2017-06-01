@@ -11,7 +11,7 @@ function drawLineColors(dataFromServer) {
 
     var options = {
         vAxis: {
-            format: '##',
+            //format: '##',
             minValue: 0,
             maxValue: 100,
             title: 'Level of Understanding (%)'

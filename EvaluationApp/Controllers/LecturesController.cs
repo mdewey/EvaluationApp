@@ -32,6 +32,9 @@ namespace EvaluationApp.Controllers
         // GET: Lectures/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            var url =  HttpContext.Request.Host.ToString();
+            ViewData["currentURL"] = url;
+
             if (id == null)
             {
                 return NotFound();

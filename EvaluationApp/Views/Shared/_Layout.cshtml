@@ -22,8 +22,7 @@
         <link rel="stylesheet" href="/css/site.css" />
     </environment>
     <environment names="Staging,Production">
-        <link rel="stylesheet"
-              href="/lib/agencybootstrap/css/agency.min.css" />
+        <link rel="stylesheet" href="/lib/agencybootstrap/css/agency.css" />
         <link rel="stylesheet" href="/css/site.min.css" asp-append-version="true" />
     </environment>
     <style>
@@ -48,7 +47,7 @@
     <!-- Plugin JavaScript -->
     <!-- Contact form JavaScript -->
 
-    <environment names="Development">
+  
         <script src="/lib/jquery/dist/jquery.js"></script>
         <script src="/lib/agencybootstrap/vendor/tether/tether.min.js"></script>
         <script src="/lib/agencybootstrap/vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -57,18 +56,7 @@
         <script src="/lib/agencybootstrap/js/agency.js"></script>
         <script src="/lib/agencybootstrap/js/contact_me.js"></script>
         <script src="/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment names="Staging,Production">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
-                asp-fallback-src="/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
-        </script>
-        <script src="/lib/agencybootstrap/js/agency.min.js"></script>
-        <script src="/lib/agencybootstrap/js/contact_me.js"></script>
-        <script src="/js/site.min.js" asp-append-version="true"></script>
-    </environment>
+
 
 
     @RenderSection("Scripts", required: false)

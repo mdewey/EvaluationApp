@@ -5,7 +5,7 @@ var graphData = [];
 function drawLineColors(dataFromServer) {
     var data = new google.visualization.DataTable();
     data.addColumn('number', 'X');
-    data.addColumn('number', 'Average of Student Reported Understanding');
+    data.addColumn('number', 'Average Student Reported Understanding');
     graphData.push(dataFromServer);
     data.addRows(graphData);
 

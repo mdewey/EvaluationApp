@@ -10993,10 +10993,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Allie\\Documents\\Visual Studio 2017\\Projects\\EvaluationApp\\EvaluationApp\\EvaluationApp.csproj",
+      "projectUniqueName": "C:\\Users\\Allie\\documents\\visual studio 2017\\Projects\\EvaluationApp\\EvaluationApp\\EvaluationApp.csproj",
       "projectName": "EvaluationApp",
-      "projectPath": "C:\\Users\\Allie\\Documents\\Visual Studio 2017\\Projects\\EvaluationApp\\EvaluationApp\\EvaluationApp.csproj",
-      "outputPath": "C:\\Users\\Allie\\Documents\\Visual Studio 2017\\Projects\\EvaluationApp\\EvaluationApp\\obj\\",
+      "projectPath": "C:\\Users\\Allie\\documents\\visual studio 2017\\Projects\\EvaluationApp\\EvaluationApp\\EvaluationApp.csproj",
+      "outputPath": "C:\\Users\\Allie\\documents\\visual studio 2017\\Projects\\EvaluationApp\\EvaluationApp\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
