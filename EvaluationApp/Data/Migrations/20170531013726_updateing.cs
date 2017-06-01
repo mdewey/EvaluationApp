@@ -25,7 +25,7 @@ namespace EvaluationApp.Data.Migrations
                 column: "LecturesId",
                 principalTable: "Lectures",
                 principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
+                onDelete: ReferentialAction.NoAction);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

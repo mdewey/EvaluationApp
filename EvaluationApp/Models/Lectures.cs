@@ -15,6 +15,8 @@ namespace EvaluationApp.Models
 
         public int CoursesId { get; set; }
         public Courses Courses { get; set; }
+
+        public ICollection<DataOfUnderstanding> Datapoints { get; set; }
        
     }
 }
