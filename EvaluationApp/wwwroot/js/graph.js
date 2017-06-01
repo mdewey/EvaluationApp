@@ -5,7 +5,7 @@ var graphData = [];
 function drawLineColors(dataFromServer) {
     var data = new google.visualization.DataTable();
     data.addColumn('number', 'X');
-    data.addColumn('number', 'Level of Understanding');
+    data.addColumn('number', 'Average of Student Reported Understanding');
     graphData.push(dataFromServer);
     data.addRows(graphData);
 
@@ -14,7 +14,7 @@ function drawLineColors(dataFromServer) {
             format: '##',
             minValue: 0,
             maxValue: 100,
-            title: 'LevelofUnderstanding (%)'
+            title: 'Level of Understanding (%)'
         },
         hAxis: {
             title: 'Time (0.05 seconds)',

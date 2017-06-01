@@ -186,11 +186,13 @@ LECTURE   GRAPHING
 
 #datachart {
     border: solid thick;
+    border-color: darkgray;
     margin-right: 5em;
 }
 
 #studentquestions {
     border: solid thick;
+    border-color: dimgrey;
     min-height: 200px;
     margin-right: 5em;
     margin-top: 2em;
